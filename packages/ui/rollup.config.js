@@ -10,14 +10,15 @@ import ts from 'typescript';
 export default {
   input: './src/index.ts',
   external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+  // the dist folder is already taken from the package.json to be able to develop within the monorepo with linked package
   output: [
     {
-      file: `./dist/${pkg.module}`,
+      file: `./${pkg.module}`,
       format: 'es',
       sourcemap: true,
     },
     {
-      file: `./dist/${pkg.main}`,
+      file: `./${pkg.main}`,
       format: 'cjs',
       sourcemap: true,
     },
@@ -64,7 +65,12 @@ export default {
             const { scripts, devDependencies, husky, release, engines, ...keep } = JSON.parse(
               content.toString()
             );
-            return JSON.stringify(keep, null, 2);
+            const additional = {
+              main: 'index.js',
+              types: 'index.d.ts',
+              module: 'index.esm.js'
+            }
+            return JSON.stringify({...keep, ...additional}, null, 2);
           },
         },
       ],
