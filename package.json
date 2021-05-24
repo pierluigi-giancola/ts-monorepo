@@ -1,0 +1,6 @@
+{
+  "name": "monorepo-react-snowpack-attempt3",
+  "workspaces": [
+    "packages/*"
+  ]
+}

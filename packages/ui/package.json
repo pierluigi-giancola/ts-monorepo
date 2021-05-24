@@ -1,0 +1,48 @@
+{
+    "name": "ui",
+    "main": "index.js",
+    "types": "dist",
+    "module": "index.esm.js",
+    "scripts": {
+        "storybook": "start-storybook -p 9001 -c .storybook",
+        "component:new": "hygen component with-prompt",
+        "test": "jest --maxWorkers=2",
+        "coverage": "jest --coverage --colors --maxWorkers=2",
+        "build": "rm -rf dist; rollup -c"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "react-dom": "*"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^19.0.0",
+        "@rollup/plugin-node-resolve": "^13.0.0",
+        "@snowpack/plugin-typescript": "^1.2.1",
+        "@snowpack/plugin-webpack": "^2.3.1",
+        "@storybook/react": "^6.2.9",
+        "@testing-library/react": "^11.2.7",
+        "@types/jest": "^26.0.23",
+        "@types/react": "^17",
+        "@types/react-dom": "^17",
+        "css-loader": "^5.2.5",
+        "hygen": "^6.1.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^26.6.3",
+        "node-sass": "5.0.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "rollup": "^2.49.0",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "sass-loader": "10.1.1",
+        "snowpack": "^3.5.1",
+        "style-loader": "^2.0.0",
+        "ts-jest": "^26.5.6",
+        "typescript": "^4.2.4"
+    },
+    "dependencies": {
+        "classnames": "^2.3.1"
+    }
+}
