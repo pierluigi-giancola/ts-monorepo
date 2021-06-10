@@ -1,9 +1,9 @@
 .Example {
   border: none;
-  background: cyan;
+  background: green;
 
   &.Example--active {
-    background-color: darkgray;
+    background-color: yellow;
   }
 
   &.Example--disabled {
